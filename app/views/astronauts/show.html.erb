@@ -9,9 +9,11 @@
 
 <h3>Add a new mission:</h3>
 <div class="new-mission-form">
-  <%= form_with url: "/astronauts/#{@astronaut.id}", method: :post do |form| %>
+  <%= form_with url: "/astronaut_missions/", method: :post do |form| %>
     <%= form.label :id, "Add a mission by ID:" %>
     <%= form.number_field :id %>
+    <%= form.hidden_field :astronaut_id, value: @astronaut.id %>
+    <%= form.hidden_field :mission_id, value: :id %>
     <%= form.submit "Submit" %>
   <% end %>
 </div>

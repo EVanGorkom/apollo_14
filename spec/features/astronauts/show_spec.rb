@@ -45,9 +45,11 @@ RSpec.describe "Astronaut Show Page" do
       expect(page).to_not have_content("#{@mission4.title}")
 
       fill_in "Add a mission by ID:", with: @mission4.id
+      click_button "Submit"
+
       expect(current_path).to eq("/astronauts/#{@astro1.id}")
       expect(page).to have_content("#{@mission4.title}")
-
+      save_and_open_page
     end
   end
 end
