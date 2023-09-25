@@ -11,10 +11,14 @@ RSpec.describe "Astronaut Index Page" do
 
   describe "Astronaut Details" do
     it "Shows the detailed information of each astronaut on the page" do
-      save_and_open_page
       expect(page).to have_content("Name: #{@astro1.name}, Age: #{@astro1.age}, Job: #{@astro1.job}")
       expect(page).to have_content("Name: #{@astro2.name}, Age: #{@astro2.age}, Job: #{@astro2.job}")
       expect(page).to have_content("Name: #{@astro3.name}, Age: #{@astro3.age}, Job: #{@astro3.job}")
     end
+  end
+
+  it "Shows the average age of all astronauts" do
+    save_and_open_page
+    expect(page).to have_content("Average Age: 36")
   end
 end
