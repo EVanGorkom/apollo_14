@@ -1,0 +1,17 @@
+<h1>Astronaut: <%= @astronaut.name %></h1>
+
+<h3>Missions:</h3>
+<ul>
+  <% @astronaut.mission_list.each do | mission| %>
+    <li><%= mission.title %></li>
+  <% end %>
+</ul>
+
+<h3>Add a new mission:</h3>
+<div class="new-mission-form">
+  <%= form_with url: "/astronauts/#{@astronaut.id}", method: :post do |form| %>
+    <%= form.label :id, "Add a mission by ID:" %>
+    <%= form.number_field :id %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
