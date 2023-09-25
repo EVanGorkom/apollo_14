@@ -6,11 +6,18 @@
 
 <div class="astronauts-list">
   <% @astronauts.each do |astro| %>
-    <p>Astronaut #<%= astro.id %></p>
-    <p>
-      Name: <%= astro.name %>, 
-      Age: <%= astro.age %>, 
-      Job: <%= astro.job %>
-    </p>
+    <div id=<%= astro.id %>>Astronaut #<%= astro.id %></p>
+      <p>
+        Name: <%= astro.name %>, 
+        Age: <%= astro.age %>, 
+        Job: <%= astro.job %>
+      </p>
+
+      <ul>
+        <% astro.mission_list.each do | mission| %>
+          <li><%= mission.title %></li>
+        <% end %>
+      </ul>
+    </div><br>
   <% end %>
 </div>
