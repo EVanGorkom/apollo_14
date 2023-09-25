@@ -1,0 +1,12 @@
+<h1>Astronauts! IN SPACE!!!</h1>
+
+<div class="astronauts-list">
+  <% @astronauts.each do |astro| %>
+    <p><%= astro.id %></p>
+    <p>
+      Name: <%= astro.name %>, 
+      Age: <%= astro.age %>, 
+      Job: <%= astro.job %>
+    </p>
+  <% end %>
+</div>
